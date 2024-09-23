@@ -47,8 +47,7 @@ jobs:
         uses: github/codeql-action/init@v3
         with:
           languages: ${{ matrix.language }}
-          packs: microsoft/windows-drivers
-
+          config-file: microsoft/Windows-Driver-Developer-Supplemental-Tools/config/codeql-config.yml@jacob-ronstadt/isolation
       - name: Retrieve and build all available solutions
         run: .\Build-AllSamples.ps1 -Verbose -ThrottleLimit 1
         env:
