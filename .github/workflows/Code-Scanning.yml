@@ -48,7 +48,7 @@ jobs:
         with:
           languages: ${{ matrix.language }}
           #config-file: microsoft/Windows-Driver-Developer-Supplemental-Tools/config/codeql-config.yml@jacob-ronstadt/isolation
-          packs: microsoft/windows-drivers
+          packs: microsoft/windows-drivers@1.1.0-alpha+3955681
           #@1.1.0-alpha+3955681:drivers\general\queries\experimental\DriverIsolationZwViolation1\DriverIsolationZwViolation1.ql
       - name: Retrieve and build all available solutions
         run: .\Build-AllSamples.ps1 -Verbose -ThrottleLimit 1
