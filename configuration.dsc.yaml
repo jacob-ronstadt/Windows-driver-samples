@@ -63,4 +63,4 @@ properties:
         id: Microsoft.WindowsWDK.10.0.26100
         source: winget
         useLatest: true
-  configurationVersion: 0.2.0
+  configurationVersion: 0.2.1
