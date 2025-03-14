@@ -52,7 +52,7 @@ jobs:
           config-file: microsoft/Windows-Driver-Developer-Supplemental-Tools/config/codeql-config.yml@development
           packs: +microsoft/windows-drivers@1.2.0-beta
       - name: Retrieve and build all available solutions
-        run: .\Build-AllSamples.ps1 -Verbose -ThrottleLimit 1
+        run: .\Build-AllSamples.ps1 -Verbose
         env:
           WDS_Configuration: Debug
           WDS_Platform: x64
