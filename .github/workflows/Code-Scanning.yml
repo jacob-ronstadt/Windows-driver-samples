@@ -50,7 +50,7 @@ jobs:
         with:
           languages: ${{ matrix.language }}
           build-mode: ${{ matrix.build-mode }}
-          packs: microsoft/cpp-queries@0.0.2:codeql-suites\cpp-code-scanning.qls
+          packs: microsoft/cpp-queries@0.0.2:codeql-suites\cpp-code-scanning.qls, microsoft/windows-drivers@1.5.0-beta+5:windows-driver-suites/recommended.qls
           config: |
             disable-default-queries: true
       - name: Install Nuget Packages
