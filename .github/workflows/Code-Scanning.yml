@@ -50,7 +50,7 @@ jobs:
         with:
           languages: ${{ matrix.language }}
           build-mode: ${{ matrix.build-mode }}
-          packs: microsoft/cpp-queries@0.0.2
+          packs: microsoft/windows-drivers@1.5.0-beta+5:drivers\general\queries\experimental\DriverIsolationZwViolation1\DriverIsolationZwViolation1.ql
           config: |
             disable-default-queries: true
       - name: Install Nuget Packages
