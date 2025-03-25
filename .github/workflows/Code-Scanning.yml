@@ -36,29 +36,29 @@ jobs:
       fail-fast: false
       matrix:
         include:
-        - language: cpp
+        - language: c-cpp
           build-mode: manual
-
+          
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           submodules: 'recursive'
+          
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
           languages: ${{ matrix.language }}
-          build-mode: ${{ matrix.build-mode }}
-          queries: +security-extended
-          packs: microsoft/cpp-queries@0.0.2
-          config-file: +microsoft/Windows-Driver-Developer-Supplemental-Tools/config/codeql-config.yml@jacob-ronstadt-codeql-config
+
       - name: Install Nuget Packages
         run: nuget restore .\packages.config -PackagesDirectory .\packages\
+        
       - name: Get changed files
         id: get-changed-files
         uses: tj-actions/changed-files@v41
         with:
           separator: ","
+          
       - if: github.event_name == 'pull_request'
         run: |
           $changedFiles = "${{ steps.get-changed-files.outputs.all_changed_files }}".Split(',')
@@ -67,6 +67,7 @@ jobs:
           WDS_Configuration: Debug
           WDS_Platform: x64
           WDS_WipeOutputs: ${{ true }}
+          
       - if: github.event_name == 'push'
         run: .\Build-AllSamples.ps1 -Verbose -ThrottleLimit 1
         env:
