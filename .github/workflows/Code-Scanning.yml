@@ -50,7 +50,7 @@ jobs:
         with:
           languages: ${{ matrix.language }}
           build-mode: ${{ matrix.build-mode }}
-          config-file: +microsoft/Windows-Driver-Developer-Supplemental-Tools/config/codeql-config.yml@jacob-ronstadt-codeql-config
+          config-file: +microsoft/Windows-Driver-Developer-Supplemental-Tools/config/codeql-config.yml@jacob-ronstadt-codeq-config
           
       - name: Install Nuget Packages
         run: nuget restore .\packages.config -PackagesDirectory .\packages\
