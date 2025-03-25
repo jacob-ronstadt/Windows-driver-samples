@@ -51,6 +51,8 @@ jobs:
           languages: ${{ matrix.language }}
           build-mode: ${{ matrix.build-mode }}
           packs: microsoft/cpp-queries@0.0.2
+          config: |
+            disable-default-queries: true
       - name: Install Nuget Packages
         run: nuget restore .\packages.config -PackagesDirectory .\packages\
         
